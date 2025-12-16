@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ffe6f2;
+        font-family: "Segoe UI", sans-serif;
+        overflow: hidden;
+    }
+
+    .stem {
+        width: 6px;
+        height: 0;
+        background: #3fa34d;
+        position: absolute;
+        bottom: 0;
+        animation: growStem 3s forwards ease-in-out;
+    }
+
+    @keyframes growStem {
+        to { height: 200px; }
+    }
+
+    .flower {
+        position: absolute;
+        bottom: 200px;
+        opacity: 0;
+        animation: bloom 2s forwards ease-in-out 3s;
+    }
+
+    @keyframes bloom {
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    .petal {
+        width: 40px;
+        height: 40px;
+        background: #ff4d6d;
+        border-radius: 50%;
+        position: absolute;
+        transform: scale(0);
+        animation: petalGrow 1.5s forwards ease-in-out 3.2s;
+    }
+
+    @keyframes petalGrow {
+        to { transform: scale(1); }
+    }
+
+    .petal:nth-child(1) { top: -30px; left: -20px; }
+    .petal:nth-child(2) { top: -30px; left: 20px; }
+    .petal:nth-child(3) { top: 10px; left: -35px; }
+    .petal:nth-child(4) { top: 10px; left: 35px; }
+    .petal:nth-child(5) { top: 30px; left: 0px; }
+
+    #message {
+        position: absolute;
+        bottom: 260px;
+        font-size: 22px;
+        color: #d6336c;
+        opacity: 0;
+        animation: revealText 2s forwards ease-in-out 5s;
+        text-align: center;
+    }
+
+    @keyframes revealText {
+        to { opacity: 1; }
+    }
+</style>
+</head>
+<body>
+
+<div class="stem"></div>
+
+<div class="flower">
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+</div>
+
+<div id="message">I like you. 🌸</div>
+
+</body>
+</html>
